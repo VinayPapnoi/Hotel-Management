@@ -54,11 +54,6 @@ function Home() {
     }))
   }
 
-  const handleReset = () => {
-    setSearchValue('')
-    setFilters(INITIAL_FILTERS)
-  }
-
   return (
     <div className="home">
       <div className="home__shell">
@@ -67,7 +62,6 @@ function Home() {
           filters={filters}
           onSearchChange={setSearchValue}
           onFilterChange={handleFilterChange}
-          onReset={handleReset}
         />
 
         <div className="hotels-section">
@@ -88,7 +82,11 @@ function Home() {
           ) : (
             <div className="hotels-grid">
               {hotels.map((hotel) => (
-                <HotelCard key={hotel.id ?? `${hotel.name}-${hotel.location}`} hotel={hotel} />
+                <HotelCard
+                  key={hotel.id ?? `${hotel.name}-${hotel.location}`}
+                  hotel={hotel}
+                  to={`/hotel/${hotel.id}`}
+                />
               ))}
             </div>
           )}

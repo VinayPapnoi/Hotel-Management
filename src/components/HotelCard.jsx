@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import './HotelCard.css'
 
-function HotelCard({ hotel }) {
+function HotelCard({ hotel, to }) {
   const price = hotel.price ?? 'N/A'
   const rating = hotel.rating ?? 'N/A'
 
@@ -20,7 +21,13 @@ function HotelCard({ hotel }) {
           <span className="price-label">Price:</span>
           <span className="price-amount">Rs. {price}</span>
         </div>
-        <button className="view-details-btn">View Details</button>
+        {to ? (
+          <Link className="view-details-btn" to={to}>
+            View Details
+          </Link>
+        ) : (
+          <span className="view-details-btn">View Details</span>
+        )}
       </div>
     </div>
   )

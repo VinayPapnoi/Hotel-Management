@@ -47,12 +47,34 @@
   margin: 3rem auto;
   padding: 0 2rem;
   flex: 1;
+  width: 100%;
+}
+
+.status-message {
+  padding: 1.25rem;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.status-message--loading {
+  display: inline-flex;
+  align-items: center;
+}
+
+.status-message--error {
+  display: grid;
+  gap: 0.75rem;
+  color: #b71c1c;
 }
 
 .hotels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
+  align-items: stretch;
 }
 
 @media (max-width: 768px) {
@@ -64,6 +86,12 @@
     padding: 0 1rem;
   }
   
+  .hotels-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
   .hotels-grid {
     grid-template-columns: 1fr;
   }

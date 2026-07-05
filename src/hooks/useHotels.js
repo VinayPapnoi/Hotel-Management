@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { HotelApiError, getHotels } from '../services/hotelService'
+import { buildQueryParams, HotelApiError, getHotels } from '../services/hotelService'
 
 function createFallbackError(error) {
   if (error instanceof HotelApiError) {
@@ -19,13 +19,14 @@ function createFallbackError(error) {
   })
 }
 
-export function useHotels(initialParams = {}) {
+export function useHotels(params = {}) {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [params, setParams] = useState(initialParams)
   const [refreshToken, setRefreshToken] = useState(0)
   const requestIdRef = useRef(0)
+  const lastRequestKeyRef = useRef('')
+  const paramsKey = buildQueryParams(params)
 
   const fetchHotels = useCallback(async (activeParams) => {
     const requestId = ++requestIdRef.current
@@ -56,18 +57,17 @@ export function useHotels(initialParams = {}) {
   }, [])
 
   useEffect(() => {
-    fetchHotels(params)
-  }, [fetchHotels, params, refreshToken])
+    const requestKey = `${paramsKey}::${refreshToken}`
 
-  const refetch = useCallback((nextParams) => {
-    if (nextParams) {
-      setParams((currentParams) => ({
-        ...currentParams,
-        ...nextParams,
-      }))
+    if (lastRequestKeyRef.current === requestKey) {
       return
     }
 
+    lastRequestKeyRef.current = requestKey
+    fetchHotels(params)
+  }, [fetchHotels, params, paramsKey, refreshToken])
+
+  const refetch = useCallback(() => {
     setRefreshToken((currentToken) => currentToken + 1)
   }, [])
 

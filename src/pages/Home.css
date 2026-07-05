@@ -1,53 +1,27 @@
 .home {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  padding: 1.5rem;
 }
 
-.search-section {
-  background-color: #1976d2;
-  padding: 3rem 2rem;
-}
-
-.search-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.search-input {
-  flex: 1;
-  min-width: 250px;
-  padding: 1rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+.home__shell {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .filter-btn {
-  padding: 1rem 2rem;
-  background-color: #fff;
-  color: #1976d2;
+  padding: 0.9rem 1.25rem;
+  background-color: #1976d2;
+  color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .filter-btn:hover {
-  background-color: #e3f2fd;
-}
-
-.hotels-section {
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 2rem;
-  flex: 1;
-  width: 100%;
+  background-color: #1565c0;
 }
 
 .status-message {
@@ -59,14 +33,20 @@
 }
 
 .status-message--loading {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  min-height: 140px;
 }
 
 .status-message--error {
   display: grid;
   gap: 0.75rem;
   color: #b71c1c;
+}
+
+.hotels-section {
+  width: 100%;
 }
 
 .hotels-grid {
@@ -78,14 +58,10 @@
 }
 
 @media (max-width: 768px) {
-  .search-section {
-    padding: 2rem 1rem;
+  .home {
+    padding: 1rem;
   }
-  
-  .hotels-section {
-    padding: 0 1rem;
-  }
-  
+
   .hotels-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

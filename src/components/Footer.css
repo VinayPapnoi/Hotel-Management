@@ -1,7 +1,8 @@
 .footer {
-  background-color: #1976d2;
-  color: #fff;
-  padding: 2rem;
+  background:
+    linear-gradient(180deg, rgba(40, 25, 14, 0.96), rgba(40, 25, 14, 1));
+  color: #d7dad7;
+  padding: 2rem 1.5rem;
   margin-top: auto;
 }
 
@@ -9,4 +10,6 @@
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }

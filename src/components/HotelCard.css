@@ -1,15 +1,21 @@
 .hotel-card {
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow:
+    0 10px 28px rgba(40, 25, 14, 0.08),
+    0 2px 8px rgba(21, 176, 151, 0.04);
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   height: 100%;
 }
 
 .hotel-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow:
+    0 16px 34px rgba(40, 25, 14, 0.12),
+    0 4px 12px rgba(21, 176, 151, 0.08);
+  border-color: #3dd6d0;
 }
 
 .hotel-image {
@@ -29,13 +35,14 @@
 }
 
 .hotel-name {
-  font-size: 1.25rem;
-  color: #333;
+  font-size: 1.28rem;
+  color: #28190e;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .hotel-location {
-  color: #666;
+  color: #513c2c;
   margin-bottom: 0.75rem;
   font-size: 0.9rem;
 }
@@ -45,8 +52,8 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  color: #ff9800;
-  font-weight: 500;
+  color: #15b097;
+  font-weight: 700;
 }
 
 .hotel-price {
@@ -57,22 +64,22 @@
 }
 
 .price-label {
-  color: #666;
+  color: #513c2c;
 }
 
 .price-amount {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1976d2;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #15b097;
 }
 
 .view-details-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: #1976d2;
+  background-color: #15b097;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -80,9 +87,11 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .view-details-btn:hover {
-  background-color: #1565c0;
+  background-color: #513c2c;
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(40, 25, 14, 0.18);
 }

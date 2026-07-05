@@ -1,35 +1,43 @@
 .home {
   min-height: 100vh;
   padding: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(21, 176, 151, 0.06), rgba(21, 176, 151, 0.03));
 }
 
 .home__shell {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .filter-btn {
   padding: 0.9rem 1.25rem;
-  background-color: #1976d2;
+  background-color: #15b097;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 18px rgba(40, 25, 14, 0.08);
 }
 
 .filter-btn:hover {
-  background-color: #1565c0;
+  background-color: #513c2c;
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(40, 25, 14, 0.14);
 }
 
 .status-message {
   padding: 1.25rem;
   background-color: #fff;
-  border-radius: 8px;
-  color: #333;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  color: #513c2c;
+  border: 1px solid rgba(61, 214, 208, 0.16);
+  box-shadow:
+    0 12px 26px rgba(40, 25, 14, 0.06),
+    0 2px 8px rgba(21, 176, 151, 0.04);
 }
 
 .status-message--loading {
@@ -42,7 +50,7 @@
 .status-message--error {
   display: grid;
   gap: 0.75rem;
-  color: #b71c1c;
+  color: #513c2c;
 }
 
 .hotels-section {

@@ -21,21 +21,24 @@
   align-items: center;
   justify-content: center;
   padding: 0.8rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  border: 1px solid rgba(61, 214, 208, 0.35);
   background: #fff;
-  color: #0f172a;
+  color: #513c2c;
   text-decoration: none;
   font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .hotel-details__hero,
 .hotel-details__related,
 .hotel-details__state {
   background: #fff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(61, 214, 208, 0.22);
+  border-radius: 20px;
+  box-shadow:
+    0 12px 28px rgba(40, 25, 14, 0.08),
+    0 2px 10px rgba(21, 176, 151, 0.04);
 }
 
 .hotel-details__hero {
@@ -73,11 +76,11 @@
 .hotel-details__title {
   font-size: 2rem;
   line-height: 1.15;
-  color: #0f172a;
+  color: #28190e;
 }
 
 .hotel-details__location {
-  color: #475569;
+  color: #513c2c;
   font-weight: 500;
 }
 
@@ -90,19 +93,19 @@
 .hotel-details__stats div {
   padding: 0.9rem 1rem;
   border-radius: 10px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: rgba(21, 176, 151, 0.05);
+  border: 1px solid rgba(61, 214, 208, 0.2);
 }
 
 .hotel-details__stats span {
   display: block;
-  color: #64748b;
+  color: #513c2c;
   font-size: 0.85rem;
   margin-bottom: 0.25rem;
 }
 
 .hotel-details__stats strong {
-  color: #0f172a;
+  color: #15b097;
   font-size: 1.05rem;
 }
 
@@ -116,14 +119,14 @@
 .hotel-details__amenities h2,
 .hotel-details__section-head h2 {
   font-size: 1.1rem;
-  color: #0f172a;
+  color: #28190e;
 }
 
 .hotel-details__description p,
 .hotel-details__amenities p,
 .hotel-details__muted,
 .hotel-details__state p {
-  color: #475569;
+  color: #513c2c;
   line-height: 1.6;
 }
 
@@ -137,8 +140,8 @@
 .hotel-details__amenity-list li {
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
-  background: #eff6ff;
-  color: #1d4ed8;
+  background: rgba(113, 247, 159, 0.16);
+  color: #15b097;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -180,6 +183,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hotel-details__back-link:hover {
+  color: #15b097;
+  border-color: #15b097;
+  box-shadow: 0 8px 16px rgba(40, 25, 14, 0.1);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 900px) {
